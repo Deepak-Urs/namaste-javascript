@@ -1,0 +1,10 @@
+JS has an important concept called the 'Execution Context'
+
+Execution Context --
+1. It has 2 parts in it -
+    a. Memory Context (Variable environment):
+        It consists of the variables and values, function definitions
+        ALl the above data is stored in key-value pairs
+    
+    b. Code Context (Thread of Execution):
+        It consists of the code being executed in a syncronous and single threaded manner
