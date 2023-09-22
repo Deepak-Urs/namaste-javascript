@@ -1,0 +1,13 @@
+Functions are the heart of Javascript
+
+Consider the functions.js program --
+1. First GEC is created and MEP is done
+2. In CEP, x will be assigned 1
+3. a() is called and anothe EC is created and pushed to the call stack above the GEC
+    a. we print x = 10
+    b. a() is popped out of the Call stack
+4. b() is called and anothe EC is created and pushed to the call stack above the GEC
+    a. we print x = 100
+    b. b() is popped out of the Call stack
+5. The value of x=1 at the global level is printed as per line-4
+6. GEC is popped out of the call stack. End of the program
