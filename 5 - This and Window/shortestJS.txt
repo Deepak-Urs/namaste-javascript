@@ -1,0 +1,8 @@
+NOTE: this and window keywords work on JS enabled browser consoles
+with respect to node compilers/interpreters, we use 'global' as the alternative
+
+In the shortestJS.js program --
+1. When the program is run by the JS Engine, first a GEC, next a global object 'window' and finally a 'this' keyword referencing 'window' is created
+2. Note that window === this
+3. line-7 to line-9 gives the same output
+4. AN EMPTY JS PROGRAM IS THE SHORTEST JS PROGRAM IN THE WORLD!!
