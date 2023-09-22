@@ -1,0 +1,27 @@
+Consider the square.js,
+
+1. First a global execution context (GEC) is created
+2. In Memory Creation Phase(MEP)
+    a. First Pass --
+        n: undefined
+        ans: undefined
+        square: {function code}
+    b: Second Pass --
+        n: 2
+        ans: undefined
+        square: {function code}
+3. Code Execution Phase (CEP)
+    a. From line 5, we've square(n) invocation
+    b. Another Execution Context(EC) is created and pushed to Call stack
+    c. Similar process to Step 2
+    d. Now, we get into CEP of new EC that was created -
+        a. n:2
+        b: ans: 2*2 = 4
+        c: return 4
+        d: sq2: 4
+    e. Similarly we've square(4) invocation
+    f. 3b to 3d goes on and we have --> sq4: 16
+4. Call Stack(CS) is also called : EPCRM (Execution Stack, Program Control Stack, Control Stack, Runtime Stack, Machine Stack)
+    a. CS takes care of the management of the nested or regular function calls
+
+NOTE: FUNCTIONS are the heart of Javascript
