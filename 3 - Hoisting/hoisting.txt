@@ -1,0 +1,41 @@
+NOTE: 
+Remember that for variables, the MEMORY ALLOCATION happens in the MEMORY ALLOCATION phase.
+Value assignment for the allocated memory happens in the code execution phase
+
+HOISTING:
+The accessing of variables and functions before they are even initialized.
+
+CASE-1:
+7
+[Function: getName1]
+Hello Javascript!
+
+Regular case. This is how we need to write code in general. Declarations and assignments in the beginning.
+
+CASE-2:
+7
+[Function: getName2]
+Hello Javascript!
+
+x => undefined (@line 16)
+This is because we have no value assigned yet at the time of 'x' being accessed during the code execution phase
+
+CASE-3:
+(@line-28) --> Reference error
+This is because y is not defined
+
+CASE-4:
+undefined
+[Function: getName5]
+Hello Javascript!
+undefined
+/Users/deepakurs/Documents/github-main/Javascript/namaste-javascript/3 - Hoisting/hoisting.js:42
+getName4()
+^
+
+TypeError: getName4 is not a function
+
+This is because the getName4 (arrow function Declaration) is treated as a variable. When it is accessed in code execution phase, it will have 'undefined' value and hence we see the error
+
+
+
