@@ -1,0 +1,16 @@
+'undefined' is a special keyword in javascript
+
+In Example 1:
+1. After MEP, we have a = undefined
+2. so  we see a=udf and then a=7
+
+In Example 2:
+1. Default value allocation to a variable in JS is undefined and hence we see b === undefined
+
+In Example 3:
+1. JS is a loosely/weakly typed language
+2. Thus we see, 10 and 'Hello world!' being printed
+3. In case of strcutly typed languages, we see that a string variable declaration must hold a string only
+
+In Example 4:
+1. We see that the we should avoid the practice of using undefined as an assignment value. It is not a standard practice.
