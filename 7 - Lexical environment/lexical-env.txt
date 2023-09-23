@@ -1,0 +1,12 @@
+1. Lexical environment is defined as local memory along with the Lexical environment of its parent/s
+2. Scope is the data/functions confined to a block 
+3. Scope chain is the link of various Lexical environments
+4. In Lexical-env.js -
+    a. for c(), Lexical environments are a() and GEC
+    b. for a(), Lexical environments are GEC
+    c. for main program, we've no Lexical environments and it points to NULL
+5. The working of the above code is as follows -
+    a. @line-5, b searches for value of b in c() Lexical env., but it won't find it and then searches its parents lex-env
+    b. in a() lex-env, we find b and c() accesses it and then prints it out
+    c. This chain of search is known as scope chain
+6. Remember to see its demo video which is very illustrative
