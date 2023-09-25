@@ -1,0 +1,15 @@
+1. A BLOCK is a compound statement which has multiple JS statements that need to be used at a place where one JS statement is expected
+    a. Ex: the multiple statement code which we see if a condition is true
+    b. let and const variables are block scoped
+    c. var is global scoped
+    d. Ex-1
+
+2. Shadowing - 
+    a. It is the overriding of global/window values inside blocks
+    b. In ex-2, we see that the Syntax error does not occur because e is being initialized logically inside the block and gets destroyed after the block ends
+    c. In ex-3, we see that 'g' is also being shadaowed, even with the different variable types
+
+3. Illegal Shadowing -
+    a. In ex-4, 'j' gets syntax error. This is because that the j inside block is getting defined as 'var'
+    b. The scope of the 'var' is at global level which conflicts with 'j's let declaration
+
