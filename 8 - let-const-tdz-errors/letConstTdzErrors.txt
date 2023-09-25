@@ -1,0 +1,16 @@
+1. Temporal Dead Zone
+    a. let and const keywords are hoisted in a separate section called Temporal Dead Zone(TDZ)
+    b. TDZ is the time between a variable being hoisted and initialized
+    c. It is hoisted in 'Script' object and not the 'global/window' object
+    d. It is wise to do all the declarations and initializations at the start of the program
+
+2. let and const and var
+    a. The strictness of variable access is as follows --  [ const > let > var ]
+    b. const is used for values that do not get changed across the program
+    c. let is the general option of variable declaration done
+    d. var is to be avoided in programming. It has its uses but needs to be used carefully
+
+3. Types of errors -
+    a. Reference error: Ex-4
+    b. Syntax error: Ex-5
+    c. Type error: Ex-6
