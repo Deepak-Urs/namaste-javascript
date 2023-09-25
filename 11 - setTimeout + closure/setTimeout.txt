@@ -1,0 +1,19 @@
+1. In Ex-1:
+    a. a simple setTimeout() is used
+
+2. In Ex-2: a program to print 1 to 5 in increasing order according to the time gap
+    a. We see the o/p to be 6 6 6 6 6 6
+    b. This is because i is referring to the same value of i
+    c. 'var' is used which is global scope and hence the latest value of i is accessed which is 6
+    d. when the timer is over accordingly, all the values point to 6 and hence we see 6
+
+3. In Ex-3:
+    a. We see the o/p to be 1 2 3 4 5
+    b. This is because, for every iteration, we get a new value of in
+    c. 'let' is block scoped and hence for every iteration, the respective block is utilized
+    d. when timer starts to get over accordingly, we see that all individual values point to different values of in
+
+4. In Ex-4:
+    a. We see that 'var' is used and p(i) is packaged
+    b. for every iteration, a new value of i is sent to the function and is closured with it
+    c. Thus, we see the o/p as 1 2 3 4 5
