@@ -1,0 +1,9 @@
+Closure
+
+1. A function binded along with its lexical environment is known as a Closure
+2. In ex-1
+    a. Closure of x()--> a:10 and function y(){...}
+3. In ex-2:
+    a. Closure of r() --> k:40
+    b. Closure of q() --> j:30 and r()
+    c. Closure of p() --> i:20 and q()
