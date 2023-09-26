@@ -1,0 +1,5 @@
+1. A function which can be passed as an argument to another function is known as a callback function
+2. In ex-1, y() is a callback function which can be used at any point in the x()
+3. In ex-2, setTimeout takes a function as a callback which will be run after the specified setTimeout
+4. In ex-3, addingEventListener() is used to attach a click event at a button specified in the index.html.
+    a. We have written a constructor kind of function to manage the number of times the button is clicked
