@@ -1,0 +1,13 @@
+ex-1:
+1. An example of closures
+2. It grows on with changing order of variable declaration and outputs
+3. How the scope chain grows
+4. How we can do line-15 as Outest()('hello world!')
+
+ex-2:
+1. Writing up scaled code to manage the counter
+2. How the data with respect to fc() and fc2() is managed
+
+ex-3:
+1. value b is 'smartly garbage collected' by JS- v8 Engine since it is a HLL architecture
+2. It can be cross verifies by adding breakpoints to the console
