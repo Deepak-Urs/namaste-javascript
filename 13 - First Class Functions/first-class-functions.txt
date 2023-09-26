@@ -1,0 +1,12 @@
+1. Anonymous functions are the functions which do not have any function name
+
+2. A Function Statement/Declaration is the general/regular way of defining a function
+
+3. A function expression is an  anonymous function assigned as a value to a variable
+    a. A named function is a named function assigned as a value to a variable
+
+4.  a. The values which we specify while defining a function is known as parameters
+    b. The values which we specify while calling a function is known as arguments
+
+5. First class functions aka 'First Class Citizens'-
+    a. The ability to use functions as values, where it can be used as arguments to a function and can be returned as a value is known as First class function
