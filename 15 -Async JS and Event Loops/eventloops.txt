@@ -1,0 +1,37 @@
+1. Sync Code execution - (In ex-1)
+    a. we have a general call stack to handle the execution of the syncronous code.
+    b. The overall execution happens as we have studied before
+    c. GEC is pushed to the call stack, a() is next pushed. After a() is done, it is pooped and similarly GEC
+
+2. WebAPIs - 
+    a. In general, apart from the JS engine, we have webserver, DNS, etc and mainly 'WEB APIs' provided by the browser
+    b. These(WebAPIs) are like the superhero utilities for javascript
+    c. ex: console, DOM, setTimeout, fetch etc
+    d. The working of these are as follows-
+
+3. Async functions and setTimeout() -
+    a. in ex-2, first the MEP happens
+    b. b() is put into the call stack, browser's WebAPIs console does the printing, b() is popped out of the callstack
+    c. setTimeout(cb) is registered by the WebAPIs of the browser with 2s timegap
+    d. in gec, we've the line-16 printed by the browser's console WebAPIs, GEC is popped out of the callstack
+    e. After 2 sec, the registered cb() is pushed to the 'CALLBACK QUEUE'
+    f. The 'EVENTLOOP' watcher checks if the CALLSTACK is empty and then pushes the cb() from CALLBACK QUEUE to the CALLSTACK
+    g. After the cb() is executed, cb() is popped out of the CALLSTACK
+
+4. DOM APIs -
+    a. First, a GEC is created and pushed to the call stack. The line-19 log is executed
+    b. The DOM API 'addEventListener' WebAPI is registered by the browser with the click EVENTLOOP
+    c. The line-23 log is executed and the GEC is popped while the registered WebAPI remains in the browser
+    d. Whenever a click is done on the target element, the cb2() gets pushed to the CB-Q, EVENTLOOP checks if the CALLSTACK is empty and then pushes the cb2() to the CALLSTACK
+    e. We may wonder why the CBQ and EVENTLOOP is needed, imagine if n-clicks are done, to keep a track of the callbacks and the order along with ensurinf the GEC is maintained intact.. Thus CBQ and EVENTLOOP are helpful
+    f. The registered callbacks end at close of the browser or if we manually program them to be removed
+
+5. Fetch APIs -
+    a. First, a GEC is created and pushed to the callstack.
+    b. A setTimeout WebAPI is registered by the browser with the cb3() and time 2s. Note that this cb3 is pushed to the CALLBACK-QUEUE after the time is done
+    c. A fetch() WebAPI is registered by the browser with the cbf(). Note that the cbf() is pushed to the MICROTASK-QUEUE after the time is done
+    d. The event loop watches the CALLSTACK until its empty. Next, it pushes the MICROTASK-QUEUE items first. After MQ are empty, the CBQ items are pushed to the CALLSTACK
+
+6. NOTE:
+    a. Priority of (MICROTASK-Q > CALLBACK-Q)
+    b. Thus, if the number of MICROTASK-Q items > CALLBACK-Q items, we come across a situation called Starvation of CB-Q
