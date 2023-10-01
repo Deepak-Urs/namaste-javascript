@@ -1,0 +1,25 @@
+1. JRE (Javascript Runtime Environment) -
+    a. A JRE is essential for running JS code. It can be on platform like web-browser, standalone applications etc
+    b. ex: V8, SPidermonkey, Chakra
+    c. A JRE consists of JS ENgine(heart of JS), WebAPIs, Event Loops, Callstack, Memory heaps, Callback Queues, Microtask Queues etc
+
+2. Overall picture of how JS code is executed:
+    a. It has 4 major phases - Code input, Parsing, Compilation, Execution
+    b. Code input: 
+        a. Here we get the code input from the user. ex: let a = 10;
+    c. Parsing:
+        a. Here, the input code is parsed by a code parser and a AST(Abstract Syntax Tree is created)
+        b. we can see it at astconverter.com, it comes in the form of an object
+    d. Compilation:
+        a. Code Compilation can happen in two ways - Interpreter(fast Execution), Compiler(efficient Execution)
+        b. For JS Code in JRE, we have JIT(Just InTime Compiler)
+        c. JIT manages a combination of Compiler and Interpreter together to deliver high performance code Execution
+    e. Execution:
+        a. We have Memory heap and Stack(call) working together here.
+        b. The garbage collector also plays a role in maintaining the Memory heap efficient. Algorithms like mark and sweep is used
+        c. The code optimizer helps in optimized execution of compiled code: Inlining, Inline Caching, Copy elision etc
+
+3. Ex- V8 Engine working
+    a. First the 2b and 2c happens
+    b. Next, the v8-Ignition interpreter and v8-Compiler Turbofan works together to form compiled code
+    c. The gargabe collection system called Ornico helps in memory optimization and code execution compilers called Oil-pan helps in optimized execution of compiled codes 
