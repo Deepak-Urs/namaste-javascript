@@ -1,0 +1,17 @@
+1. Higher Order Functions (HOF)-
+    a. A HOF is a Function which takes a function as an input and can give an ouput as a function as well.
+    b. The i/p and o/p of a HOF are also called as callback Functions
+    c. ex-1
+
+2. Functional Programming -
+    a. The art of solving problem in the way of breaking down solutions into smaller functions is known as functional programming
+    b. Use DRY principle to solve the problems (DRY - Don't Repeat Yourself)
+    c. ex-2
+
+3. polyfill definition for calculate() on array values.
+    a. In ex-3, we have a polyfill definition of calculate() for circle parameters
+    b. now, calculateCustom() can be used on all kinds of radius-arrays
+
+4. A trend observed was that the calculate() is similar to map function 
+    a. A polyfill of the mapC is given which mimics the internal working of the map function
+    b. now, map() can be used on all kinds of radius-arrays
