@@ -1,0 +1,18 @@
+1. Concurrency Model of Javascript:
+    a. JS is a synchronous and single threaded language
+    b. It can support async operations
+    c. Still, it works efficiently on the browser
+
+2. setTimeout drawbacks -
+    a. Consider setTimeout.js and it is executed
+    b. line-1 executes in GEC @ CALLSTACK, setTimeout's cb() is registered
+    c. while loop is started and the main execution thread is withheld
+    d. line-12 is executed after while loop is done and then we have the cb() called
+    e. This is problematic as the cb() might be important and the CB-Q and event loop waits for the GEC to be popped from the CALLSTACK. CB-Q startvation is happening
+    f. Thus setTimeout() has this drawback of relaibility
+
+3. setTimeout(0) -
+    a. Can be used for defering few operations
+    b. setTimeoutZero() is an example
+
+4. General notes on the LiveServer setup
