@@ -1,0 +1,19 @@
+1. Map
+    a. Map function works on transforming the whole data
+    b. It is usually used when we have to transfirm the whole data array
+    c. ex1, ex4
+
+2. Filter
+    a. Filter function works on filter a group of values which satisfies specific conditions
+    b. It is generally used to get a subset of data that satisfies specific conditions
+    c. ex2
+
+3. Reduce
+    a. Reduce function is used to obtain unique result out of a given data array
+    b. Reduce is used to generally write a little bit complex queries than map and Reduce
+    c. A reduce function has an accumulator and a current values. accumulator is initially set upon which result is filled
+    d. ex3, ex5
+
+4. Chaining
+    a. We can chain filter() and map() operations
+    b. ex6
