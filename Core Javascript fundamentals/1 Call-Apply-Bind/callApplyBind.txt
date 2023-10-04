@@ -1,0 +1,7 @@
+FUNCTION BORROWING
+
+1. FUNCTION BORROWING is the process of utilizing a function which is a part of a certain portion of code (Refer ex1)
+2. The three methods helping in the above work are - (NOTE that these methods work on the function expressions. Refer ex2)
+    a. Call() -> call() takes in the arguments and feeds it to the function expressions
+    b. Apply() -> apply() is similar to the call() except it provides the specified parameters to the function in the form of an array
+    c. Bind() -> bind() is as same as the call() except it returns a reference to the function. The referenced function can be used anytime later
