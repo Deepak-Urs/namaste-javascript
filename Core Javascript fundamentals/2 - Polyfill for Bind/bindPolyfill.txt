@@ -1,0 +1,17 @@
+1. Bind(): ex1
+    a. Sample example of the basic 'bind' function
+
+2. myBind(): polyfill definition (ex2)
+    a. function.prototype.<polyfillName> is the expression to which a function statment is assigned
+    b. To mimic a 'bind()', we need to return a function
+    c. Note the order in which the polyfill functions are called
+        a. In let res2 = printName.myBind(name2, "Mysuru"), we are having two arguments
+        b. we slice the args for .apply() in such a manner that, we use args[0] and then the remaining args all together
+        c. We see >> res2("Karnataka") be the calling function to the reference function that was returned by the myBind
+        d. we are collating all the arguments accordingly
+
+3. In ex3,
+    a. we've printName2() defined with nation info
+    b. polyfill remains the Sample
+    c. we call >> res3("Karnataka", "India")
+    d. The polyfill manages it
