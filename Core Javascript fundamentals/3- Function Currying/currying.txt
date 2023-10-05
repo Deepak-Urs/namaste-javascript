@@ -1,0 +1,11 @@
+FUNCTION CURRYING helps in controlling the type of output that we want to receive.
+It can be implemented in two ways -
+
+1. by bind(): // ex1
+    a. we create a function expression called multiply
+    b. we set 2 as the controlling value by using the bind()
+    c. we call the multiplyByTwo(<argument>) to get the respective result
+
+2. by Closure: // ex2
+    a. we create multiplyClosure function which returns a callback
+    b. we call multiplyClosure with the arguments for the callback to get the respective results
