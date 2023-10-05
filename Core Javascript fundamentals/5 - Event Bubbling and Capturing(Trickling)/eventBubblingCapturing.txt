@@ -1,0 +1,25 @@
+1. Event Bubbling and trickling are two event concepts in javascript
+
+2. Event Bubbling usually goes from inward to outward
+    a. ex1 is an example of bubbling
+    b. The boolean value after the callback is called 'useCapture' which is defaultly false. It is 'false' if nothing is specified
+
+
+3. Event Capturing/Trickling goes from outwards to inwards
+    a. ex2 is an example of bubbling
+    b. The boolean value after the callback is called 'useCapture'. 'useCapture' is 'true' if Event Bubbling is selected
+
+4. Priority of Event (Capturing > Bubbling)
+
+5. In case of ex3,
+    a. we;ve the o/p --> GP, C, P
+    b. This is because we see that 'Capturing' happens first and GP, C occurs and then P occurs as a part of 'Bubbling'
+
+6. In case of ex4,
+    a. we've the o/p --> GP, C, P
+    b. This is because we see that 'Capturing' happens first and GP occurs and then C, P occurs as a part of 'Bubbling'
+
+7. We can use e.stopPropagation() to stop the 'bubbling' or 'Capturing' of events.
+    a. this is done so that expesive operations are avoided
+    b. In case of ex5, we've e-capturing which results --> C, P
+    c. In case of ex6, we've e-capturing which results --> GP
