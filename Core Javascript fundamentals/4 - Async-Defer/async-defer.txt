@@ -1,0 +1,28 @@
+Consider the three scenarios and three flows of execution -
+    * Regular, Async, Defer
+    * HTML Parsing, JS content loading, JS content execution
+
+1. Regular
+    a. ex: <script src="" />
+    b. here when the index.html starts, the HTML-Parsing begins
+    c. when the script tag is executed, HTML-Parsing pauses and then the JS-content-loading flow starts
+    d. After JS-content-loading flow ends, the JS-content-execution flow starts
+    e. After JS-content-execution ends, the HTML parsing continues until completion
+    f. This is the regular execution flow
+
+2. Async
+    a. ex: <script async src="" />
+    b. here when the index.html starts, the HTML-Parsing flow and the script tag execution(JS-content-loading phase) happens parallelly
+    c. After the JS-content-loading phase is done, the JS-content-execution starts and the HTML parsing pauses
+    d. After the JS-content-execution is done, the HTML parsing continues until completion
+    d. It should be noted that the async operation does not guarantee the order of execution of code. This is mainly because of the inter dependency of the functions and data causes a lot of inconsistency
+    e. async myst be ideally used when we try to import data and services from external resources which are independent of other functions of the main code
+
+
+3. Defer
+    a. ex: <script defer src="">
+    b. here when the index.html starts, the HTML-Parsing flow and the script tag execution(JS-content-loading phase) happens parallelly
+    c. The HTML-parsing flow continues until it is completed and then the JS-content-execution flow occurs until completion
+    d. It should be noted that the defer operation guarantees the order of execution of code
+
+4. NOTE: See diagram from the notes for reference
