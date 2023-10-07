@@ -1,4 +1,4 @@
-//ex1: Bubbling
+//ex1: Bubbling: Click at CHILD
 document.querySelector('#grandparent').
 addEventListener('click', () => {
     console.log('Grandparent called!')
@@ -13,9 +13,10 @@ document.querySelector('#child').
 addEventListener('click', () => {
     console.log('Child called!')
 })
+// O/P: C, P, GP
 
 
-//ex2: Capturing
+//ex2: Capturing: Click at CHILD
 document.querySelector('#grandparent').
 addEventListener('click', () => {
     console.log('Grandparent called!')
@@ -30,6 +31,7 @@ document.querySelector('#child').
 addEventListener('click', () => {
     console.log('Child called!')
 }, true)
+// O/P: GP, P, C
 
 
 //ex3: Combination-1: Click the CHILD

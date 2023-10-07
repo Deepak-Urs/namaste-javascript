@@ -8,7 +8,7 @@ let printName = function (city, state) {
     console.log(this.firstName + " " + this.lastName + " from " + city + ", " +state)
 }
 
-let res = printName.bind(name, "Mysuru")
+let res = printName.bind(name, "Mysuru", "Karnataka")
 res()
 
 // ex2
