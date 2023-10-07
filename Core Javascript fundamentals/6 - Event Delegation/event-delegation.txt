@@ -1,0 +1,31 @@
+1. What is event delegation?
+    a. The process of managing the events in an application to maintain scalability of the app with respect to events is known as event delegation
+    b. event delegation helps the different scenarios of managing the different kinds of events that interact without any breakage
+
+2. Scenario of why it is needed (multiple categories)
+    a. For example, consider a category div with an unordered list of categories
+    b. Assume that each 'list' item click would redirect to a new specific page and an event listener for each list item is used to achieve the same
+    c. The above structure solution works but it caused scalability issues because assume there are thousands of categories which result in thousands of event listeners and causes performance bottlenecks
+    d. Event delegation process helps in solving this issue and is explained via example sas follows
+
+3. Example-1 of how event delegation is used to overcome above situation
+    a. Conside the scenario of having 3 unordered category list items and each of them designated to reroute to specifc category page
+    b. upon the attached 'click' event for the parent 'ul' tag of the 3 inputs, we search for the 'id' values inside <target.id>
+    c. based on the string manipulation logic, we see different behavior outputs
+
+
+4. Example-2 of how behavior pattern can be achieved
+    a. Consider the scenario of having 3 input texts and attributes of data-uppercase/lowercase/password
+    b. upon the attached 'keyup' event for the parent div of the 3 inputs, we search for the attribute values inside target.dataset.<attrribute-value>
+    c. based on the string manipulation logic in each case, we see different behavior outputs
+
+5. Pros and cons
+    A. Pros
+        a. It helps in saving memory. ex: of having an event listener at the parent level instead of children level
+        b. Helps in writing less code by avoiding repitition and improves readbility of code
+        c. scalability of the new added items/events can be easily handled
+
+    B. Cons
+        a. It does not handle all events. ex: on-blur, on-focus
+        b. e.stopPropagation() breaks the event delegation at various scenarios and this needs to be planned appropriately
+
