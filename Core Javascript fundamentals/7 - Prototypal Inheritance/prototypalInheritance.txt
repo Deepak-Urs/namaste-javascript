@@ -1,0 +1,14 @@
+1. What is prototype/__prototype__ ?
+    a. Whenever we create an object/array/function or any other data item, JS engine creates and attaches a hidden object with various capabilities
+    which is known as 'prototype' object. A data item's prototype object can be accessed by '.prototype' or '.__prototype__'
+    b. ex: for custom objects, we do arr.__proto__
+    c. ex: For predefined objects, we do Array.prototype
+
+2. what is prototype chain?
+    a. The examples seen in EX2 where we get a chain of 'datatype --> Object --> null'.
+    b. For array, we get an array, then an object and then null as return values as we try to keep on accessing the '.prototype' or '.__prototype__'
+
+3. example of prototypal inheritance.
+    a. assume that the properties of object1 needs to be inherited by object2
+    b. ex3 shows the above. we can note that the getIntro first searched for city in object2 and then displayed the object1's data
+    c. ex4 is another scenario which has all the relevant data
