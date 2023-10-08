@@ -1,0 +1,11 @@
+1. Debouncing is a webpage performance improvement technique which helps in making efficient API calls and avoids redundant API calls
+
+2. Applications of Debouncing are -
+    a. Lazy Loading
+    b. API call on scroll events
+    c. API call on resize events
+
+3. The implementation of debouncing is as follows -
+    a. First, if we use the getData() to make APIcalls, it makes APIcall for every key stroke
+    b. We can introduce 'betterFunction()' which has a callback function from the debounce()
+    c. In case of debouncing in point-2 scenarios, we need to change the event being handled
