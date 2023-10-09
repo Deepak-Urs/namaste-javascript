@@ -1,0 +1,30 @@
+1. Debouncing enforces that a function is not to be called again until a certain amount of time has passed without it being called.
+    a. ex: execute a function only if 100 ms have passed without it being called
+    b. here event is the limiting factor
+
+2. Throttling enforces a max number of times a function can be called over time
+    a. ex: execute a function at most once every 100 ms
+    b. here time is the limiting factor
+
+3. Examples
+    1. Search bar:
+        a. In a search bar, wrt debouncing, after we type a search and give a break of 250ms, an API call could be made.
+        b. In a search bar, wrt throttling, after every 250ms, we are making an API call
+        c. Debouncing looks more meaningful because the results obtained are sensible as we think of something and take a break after which
+            we get an auto complete result, 
+        d. Mainly, we are worried about the number of calls being made as every operation is costly at high levels
+
+    2. Resize window:
+        a. wrt debouncing, while we resize and give a break of 100ms, an API call could be made for understanding the resize analytics. This would be not suitable experimentally for analytics
+        b. wrt throttling, while we resize, an API call is made for every 100ms. This helps in understanding how many times the user resized wrt a specific timeframe
+        c. Throttling seems to be the viable option for this scenario because we've consistent data for the analytics which is more trustable
+        d. Mainly, we are not worried about the number of calls being made as our objective is analytics and not majorly on reducing the API calls
+
+    3. Gaming:
+        a. wrt debouncing, we have a scenario of using a pistol. you fire after you've taken a break and reloaded?
+        b. wrt throttling, we have a scenario of using a machine gun. you fire the bullet in frequent intervals.
+        c. but in genral, for gaming , we use throttling
+    
+4. The overall decision of using debouncing or throttling depends on the use case scenario
+    a. If you aim to reduce the number of API calls drastically and aim on performance, use DEBOUNCING
+    b. If you aim to achieve certain analytics or any operations at the cost of making extra API calls(althrough reduced number of extra API calls), use THROTTLING
