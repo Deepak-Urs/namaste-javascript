@@ -1,0 +1,8 @@
+1. Throttling enforces a max number of times a function can be called over time
+2. Here, time is the limiting factor
+3. ex: execute a function at most evry 100ms
+4. applications -- 
+    a. calculating the analytics of the resize of a window
+    b. development of games, in case of shooting games, we can have pistol at lvl-1, machine gun lvl-2 execute
+5. We should note that If you aim to achieve certain analytics or any operations at the cost of making extra API calls(althrough reduced number of extra API calls), use THROTTLING
+6. See the example demo, here we try to short circuit the calling functioin for every 100ms
