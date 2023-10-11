@@ -1,0 +1,13 @@
+1. WebStorage APIs are used to store data into the browser. They are usually in the form of key-value pairs
+2. Two types of popular webstorage are - sessionStorage, localStorage
+3. localStorage --> stores about 5mb, exists until browser is open
+4. sessionStorage --> stores about 4kb, exists until session is open
+5. WebStorage uses SAME ORIGIN policy for security of the data -
+    a. Threee things, protocol(P), host(H), port
+    b. EXAMPLE: Consider the source, http://akshaysaini.in
+    c. http://akshaysaini.in/data.php --> we can access data since same P, H
+    d. https://akshaysaini.in --> we cannot access data because of the different P
+    e. http://blog.akshaysaini.in --> we cannot access data because of the different H
+    f. http://blog.akshaysaini.in: 8080 --> we cannot access data because of the different Port
+6. Try to have predefined functions possible before the interview for localStorage, it'll be easy to use
+7. In case of the examples senn, localStorage can hold string values only. Thus we try to update the string version of object data and try to parse it again after fetched
