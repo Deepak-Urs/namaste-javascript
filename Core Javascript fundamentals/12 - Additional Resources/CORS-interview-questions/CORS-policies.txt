@@ -1,0 +1,29 @@
+Cross Origin Resource Sharing
+1. Initially, Sharing of Resources between different webapps was difficult and sometimes not possible
+    a. ex: https://as.in --> https://as.in/data.php OR http://as.in OR https://as.in:5050 OR https://google.com
+    b. CORS policies were introfuced to facilitate the required mechanism
+
+2. The working of CORS is as follows:
+    a. Consider two Apps A and B.
+    b. A initially have to make a 'Preflight-Options' request to B. B will send back 'additonal-http-headers' back to a
+    c. Now A has to make the actual request with the 'additonal-http-headers' and then B will service the request
+
+3. Additional HTTP Headers -
+    a. Accept Control Allow Origin: * 
+        a) * means the server is public to the request device and can make calls to it. If * becomes 'https://as.in', it is confined
+    b.  Accept Control Allow Methods: POST, GET
+        a) This helps in reserving access to different kinds of users
+
+NOTE:
+    1. We generally have two kinds of requests:
+        a. Simple request: Requests are not having Preflight Options
+        b. CORS request: Requests are having Preflight Options
+
+    2. CORS error:
+        a. CORS error is not a runtime error. It means that the CORS policies are not being followed properly either by the FE or BE
+        b. To solve the above we cab set the CORS Headers as a fix
+        c. We can start chrome with 'disable-security' option (not a good idea)
+
+    3. Support
+        a. All the popular browsers support CORS mechanism thse days
+        b. CORS is majorly used in microserice architecures
