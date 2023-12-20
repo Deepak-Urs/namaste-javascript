@@ -10,27 +10,37 @@
     </style>
 </head>
 <body>
-    <div id="events">
-        <div id="grand-parent">
-            grand-parent
-            <span id="gp-val">gp-val</span>
-            <div id="parent">
-                parent
-                <span id="p-val">p-val</span>
-                <div id="child">
-                    child
-                    <span id="c-val">c-val</span>
+    <div id="root">
+        <div id="events">
+            <div id="grand-parent">
+                grand-parent
+                <span id="gp-val">gp-val</span>
+                <div id="parent">
+                    parent
+                    <span id="p-val">p-val</span>
+                    <div id="child">
+                        child
+                        <span id="c-val">c-val</span>
+                    </div>
                 </div>
             </div>
+            
+            
+        </div>
+        <div id="form">
+            <input type="text" name="fname" data-lowercase placeholder="First Name"/>
+            <input type="text" name="city" data-uppercase placeholder="City"/>
         </div>
         
-        
+        <div id="debouncing">
+            <input type="text" id="textInput" onkeyup="betterFunction()" placeholder="debouncer-demo">
+                <!--Clicked: 
+                <span id="counter">0</span>   -->
+                <!--times-->
+            </input>
+        </div>
+        <link href="./styles.css" rel="stylesheet"/>
+        <script src="coding.js"></script>
     </div>
-    <div id="form">
-        <input type="text" name="fname" data-lowercase placeholder="First Name"/>
-        <input type="text" name="city" data-uppercase placeholder="City"/>
-    </div>
-    <link href="./styles.css" rel="stylesheet"/>
-    <script src="coding.js"></script>
 </body>
 </html>

@@ -69,7 +69,7 @@
 //                const res = await item
 //                iterableArray[index] = res
 //                unresolved -= 1
-    
+
 //                if(!unresolved) {
 //                    resolve(iterable)
 //                    return
@@ -101,93 +101,136 @@
 //console.log(curry(1)(2)(3)(4)(5)())
 
 // 5. Event bubbling and capture
-//document.querySelector('#grand-parent').addEventListener('click', (e) => {
-//    console.log('grand-parent clicked!')
-//    document.querySelector('#gp-val').innerHTML = 'Same Value'
-//}, true)
+document.querySelector('#grand-parent').addEventListener('click', (e) => {
+    console.log('grand-parent clicked!')
+    document.querySelector('#gp-val').innerHTML = 'Same Value'
+}, true)
 
-//document.querySelector('#parent').addEventListener('click', (e) => {
-//    console.log('parent clicked!')
-//    document.querySelector('#p-val').innerHTML = 'Same Value'
-//}, false)
+document.querySelector('#parent').addEventListener('click', (e) => {
+    console.log('parent clicked!')
+    document.querySelector('#p-val').innerHTML = 'Same Value'
+}, false)
 
-//document.querySelector('#child').addEventListener('click', (e) => {
-//    console.log('child clicked!')
-//    document.querySelector('#c-val').innerHTML = 'Same Value'
-//}, true)
+document.querySelector('#child').addEventListener('click', (e) => {
+    console.log('child clicked!')
+    document.querySelector('#c-val').innerHTML = 'Same Value'
+}, true)
 
-////6. event delegation
-//document.querySelector('#form').addEventListener('keyup', (e) => {
-//    console.log(e);
-//    if(e.target.dataset.lowercase != undefined) {
-//        e.target.value = e.target.value.toLowerCase()
+//6. event delegation
+document.querySelector('#form').addEventListener('keyup', (e) => {
+    console.log(e);
+    if(e.target.dataset.lowercase != undefined) {
+        e.target.value = e.target.value.toLowerCase()
+    }
+    if(e.target.dataset.uppercase != undefined) {
+        e.target.value = e.target.value.toUpperCase()
+    }
+})
+
+// 7
+//class Calculator {
+//    constructor() {
+//        this.queue = []
+//        this.result = 0
 //    }
-//    if(e.target.dataset.uppercase != undefined) {
-//        e.target.value = e.target.value.toUpperCase()
+
+//    add = (val) => {
+//        this.queue.push({ operation: 'add', val })
+//        return this
 //    }
-//})
 
+//    sub = (val) => {
+//        this.queue.push({ operation: 'sub', val })
+//        return this
+//    }
 
-class Calculator{
-    constructor() {
-        this.result = 0
-        this.queue = []
-    }
+//    mul = (val) => {
+//        this.queue.push({ operation: 'mul', val })
+//        return this
+//    }
 
-    add = (val) => {
-        this.queue.push({operation: 'add', 'value': val})
-        return this
-    }
-    
-    sub = (val) => {
-        this.queue.push({operation: 'sub', 'value': val})
-        return this
-    }
+//    delay = (time) => {
+//        this.queue.push({ operation: 'delay', time })
+//        return this
+//    }
 
-    mul = (val) => {
-        this.queue.push({operation: 'mul', 'value': val})
-        return this
-    }
+//    equals(callback) {
+//        const executeNext = () => {
 
-    delay = (time) => {
-        this.queue.push({operation: 'delay', time})
-        return this
-    }
+//            if (this.queue.length === 0) {
+//                callback(this.result)
+//                return
+//            }
 
-    equals(callback) {
-        const executeNext = () => {
-            if(this.queue.length == 0) {
-                callback(this.result)
-                return
-            }
+//            const operation = this.queue.shift()
 
-            const operation = this.queue.shift()
+//            switch (operation.operation) {
+//                case 'add':
+//                    this.result += operation.val
+//                    break
+//                case 'sub':
+//                    this.result -= operation.val
+//                    break
+//                case 'mul':
+//                    this.result *= operation.val
+//                    break
+//                case 'delay':
+//                    setTimeout(executeNext, operation.time)
+//                    return
+//                default:
+//                    throw new Error('Operation not found!')
+//            }
 
-            switch(operation.operation) {
-                case 'add': 
-                    this.result += operation.value
-                    break
-                case 'sub': 
-                    this.result -= operation.value
-                    break
-                case 'mul': 
-                    this.result *= operation.value
-                    break
-                case 'delay': 
-                    setTimeout(executeNext, operation.time)
-                    return
-                default:
-                    throw new Error('Unsupported operation', `${operation.operation}`)
-            }
+//            executeNext()
+//        }
 
-            executeNext()
-        }
+//        executeNext()
+//    }
+//}
 
-        executeNext()
-        return this
-    }
+//new Calculator().add(2).sub(1).mul(4).delay(1000).add(10).equals((res) => console.log(res))
 
+//8. Debouncing
+let counter = 0
+const getData = () => {
+    console.log('API called - ', counter++);
 }
 
+const debounce = (fn, delay) => {
+    let timer;
+    return function() {
+        let context = this
+        args = arguments
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.apply(context, args)
+        }, delay)
+    }
+    
+}
 
-let calc = new Calculator().add(2).sub(1).mul(4).delay(1000).add(5).equals((res) => console.log(res))
+//getData()
+const betterFunction = debounce(getData, 250)
+
+//9 Throttling
+
+let count = 0
+const expensive = () => console.log('window-resize', count++);
+
+const throttle = (fn, delay) => {
+    let flag = true
+
+    return function(...arguments) {
+        let context = this, args = arguments 
+        if(flag){
+            fn.apply(context, args)
+            flag = false
+            setTimeout(() => {
+                flag = true
+            }, delay)
+        }
+    }
+}
+
+const optimalResizing = throttle(expensive, 500)
+window.addEventListener('resize', optimalResizing)
