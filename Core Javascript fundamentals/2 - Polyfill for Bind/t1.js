@@ -10,13 +10,20 @@ Function.prototype.myBind = function (...args) {
     }
 }
 
-var pfn2 = printFullName.myBind(name, 'D', 'U')
-pfn2()
+var pfn = printFullName.myBind(name, 'D', 'U')
+pfn()
+
+// --------------------------------------------
 
 Function.prototype.myBind2 = function (...args) {
     let obj = this
     let params = args.slice(1)
+    console.log('args[0] ', args[0]);
+    console.log('args[1] ', args[1]);
+    console.log('params ', params);
+
     return function(...args2) {
+        console.log('args2 ', args2);
         obj.apply(args[0], [...params, ...args2])
     }
 }
