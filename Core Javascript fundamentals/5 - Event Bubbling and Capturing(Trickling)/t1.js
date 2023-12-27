@@ -36,9 +36,14 @@ document.getElementById('gp').addEventListener('click', () => {
 
 document.getElementById('p').addEventListener('click', () => {
     console.log('P clicked!');
-}, true)
+})
 
 document.getElementById('c').addEventListener('click', () => {
     console.log('C clicked!');
+})
+
+document.querySelector('#p').addEventListener('click', (e) => {
+    console.log('stopPropogation seen');
+    e.stopPropagation()
 })
 // Click Child, we get P,C,GP because E-C/T has first priority
