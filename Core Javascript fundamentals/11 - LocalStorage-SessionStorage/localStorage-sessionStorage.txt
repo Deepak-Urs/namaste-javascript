@@ -8,6 +8,6 @@
     c. http://akshaysaini.in/data.php --> we can access data since same P, H
     d. https://akshaysaini.in --> we cannot access data because of the different P
     e. http://blog.akshaysaini.in --> we cannot access data because of the different H
-    f. http://blog.akshaysaini.in: 8080 --> we cannot access data because of the different Port
+    f. http://akshaysaini.in: 8080 --> we cannot access data because of the different Port
 6. Try to have predefined functions possible before the interview for localStorage, it'll be easy to use
 7. In case of the examples senn, localStorage can hold string values only. Thus we try to update the string version of object data and try to parse it again after fetched
