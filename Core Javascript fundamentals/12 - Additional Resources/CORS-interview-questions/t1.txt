@@ -1,0 +1,11 @@
+CORS -> Cross Origin Resouce Sharing
+
+1. It is a mechanism for sharing of resources between different web services
+2. There are two types of requests-
+    a. Simple Requests - They follow simple standard HTTP policies
+    b. Preflight requests -
+        a) A requests B for some data by Preflight/OPTIONS call
+        b) After authenticating A's request, B sends back preflight headers to a
+        c) A has to make the API call again now with the preflight headers (ex: Accept-Control-Allow-Origin)
+3. CORS error is not a runtime error, it is usualy an error donw while developing the web service by the developers
+4. We can override the error bu disabling the browser web security OR enabling our calls with CORS librariries etc.,
