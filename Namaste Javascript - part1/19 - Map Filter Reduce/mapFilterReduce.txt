@@ -1,12 +1,14 @@
 1. Map
     a. Map function works on transforming the whole data
-    b. It is usually used when we have to transfirm the whole data array
+    b. It is usually used when we have to transform the whole data array
     c. ex1, ex4
+    d. It returns a new array with the transformed values
 
 2. Filter
-    a. Filter function works on filter a group of values which satisfies specific conditions
+    a. Filter function works to filter a group of values which satisfies specific conditions
     b. It is generally used to get a subset of data that satisfies specific conditions
     c. ex2
+    d. A shallow copy of the given array containing just the elements that pass the test. If no elements pass the test, an empty array is returned.
 
 3. Reduce
     a. Reduce function is used to obtain unique result out of a given data array
