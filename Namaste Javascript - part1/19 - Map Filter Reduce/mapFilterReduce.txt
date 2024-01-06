@@ -15,6 +15,7 @@
     b. Reduce is used to generally write a little bit complex queries than map and Reduce
     c. A reduce function has an accumulator and a current values. accumulator is initially set upon which result is filled
     d. ex3, ex5
+    e. The value that results from running the "reducer" callback function to completion over the entire array.
 
 4. Chaining
     a. We can chain filter() and map() operations
