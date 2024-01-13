@@ -24,3 +24,8 @@ async function handlePromise() {
 
 }
 handlePromise();
+
+
+// NOTE: 
+//1. For interviews on async-await, explain the functions step by step as in notes, it is properly explained
+//2. choosing between async/await(latest syntactic sugar) and promise.then().catch() is an option of developer or codebase choice.
