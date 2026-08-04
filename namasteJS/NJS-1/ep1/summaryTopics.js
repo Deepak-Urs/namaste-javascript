@@ -112,3 +112,4 @@ function a1() {
 }
 var y = a1();
 y();
+console.log(z);
